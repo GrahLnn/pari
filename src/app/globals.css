@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* 浅色模式的滚动条样式 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dedfe1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5aab0;
+}
+
+
+/* 深色模式的滚动条样式 */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  /* #sidebar::-webkit-scrollbar {
+    width: 2px;
+  } */
+
+  #modalLabelList::-webkit-scrollbar-track {
+    background: #191a23;
+  }
+  #modalLabelList::-webkit-scrollbar-thumb {
+    background: #262733;
+    border-radius: 8px;
+  }
+  #fileLabels::-webkit-scrollbar {
+    width: 0px;
+    height: 0%;
+  }
+  
+
+  ::-webkit-scrollbar-track {
+    background: #191a23;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2d2f3f;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #42435c;
+  }
+
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+#sidebar {
+  /* 其他样式 */
+  overscroll-behavior: contain; /* 或者 'none' 如果你不希望侧边栏滚动到边界时出现滚动效果 */
+  
+}
+
+
+#sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+
+#sideList::-webkit-scrollbar {
+  width: 0px;
+}
+
+#filterArea::-webkit-scrollbar {
+  width: 0px;
+}
+
+#fileLabels::-webkit-scrollbar {
+  width: 0px;
+}
+
+.slide-transition {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.bottom-10-5 {
+  bottom: 3rem; /* 或者其他你需要的单位 */
+}
+
+.bottom-5-5 {
+  bottom: 2.65rem; /* 或者其他你需要的单位 */
+}
+
+.button-container {
+  position: relative;
+  overflow: hidden; /* 隐藏超出部分 */
+
+  /* 其他必要的样式 */
+}
+
+.button-text {
+  display: inline-block;
+  white-space: nowrap; /* 防止文本换行 */
+  
+  /* 其他必要的样式，如 padding, font-size 等 */
+}
+
+.default-text {
+  max-width: 100%; /* 默认状态下显示完整文本 */
+}
+
+.hover-text {
+  max-width: 0; /* 默认状态下不显示文本 */
+  overflow: hidden; /* 隐藏超出部分 */
+}
+
+.expanded {
+  max-width: 100%; /* 悬停状态下显示完整文本 */
+  transition: all 0.5s ease;
+}
